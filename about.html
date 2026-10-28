@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%23ff375f%27/%3E%3Cstop offset=%271%27 stop-color=%27%230a84ff%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27url(%23g)%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Arial%27 font-weight=%27800%27 font-size=%2730%27 text-anchor=%27middle%27 fill=%27white%27%3ETU%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="About | Thejas U">
+  <meta property="og:description" content="About Thejas U: trader, graphic designer and software developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thejas U">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og.png">
+  <meta name="theme-color" content="#000000">
+  <title>About | Thejas U</title>
+  <meta name="description" content="About Thejas U: trader, graphic designer and software developer.">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var theme = "dark";
+      try {
+        theme = localStorage.getItem("theme") ||
+          (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      } catch (e) {}
+      root.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="depth.css">
+  <link rel="stylesheet" href="about.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Thejas U", "jobTitle": "Trader, graphic designer and software developer", "email": "mailto:thejasnox12@gmail.com", "alumniOf": {"@type": "CollegeOrUniversity", "name": "Malnad College of Engineering"}, "sameAs": ["https://github.com/ByThejas", "https://www.linkedin.com/in/thejasumesh/", "https://www.behance.net/thejasumesh", "https://x.com/ByThejas"]}</script>
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+  </div>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Home">TU</a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="is-active">About</a>
+      <a href="trading.html">Trading</a>
+      <a href="design.html">Design</a>
+      <a href="developer.html">Developer</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="index.html#contact" class="btn">Let's talk</a>
+    </div>
+  </header>
+
+  <main class="subpage">
+
+    <div class="page-top">
+      <a class="back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        Home
+      </a>
+      <a class="btn resume-btn" href="resume/Thejas_U_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        Resume
+      </a>
+    </div>
+
+    <section class="about" aria-labelledby="about-title">
+      <div class="projects__head reveal">
+        <div class="cube-wrap" aria-hidden="true"><div class="cube"><span class="cube__f">TU</span><span class="cube__f">Aa</span><span class="cube__f">&lt;/&gt;</span><span class="cube__f">XAU</span><span class="cube__f">Ps</span><span class="cube__f">{ }</span></div></div>
+        <div>
+          <p class="eyebrow">About me</p>
+          <h1 id="about-title">Hi, I'm <span class="grad">Thejas.</span></h1>
+        </div>
+        <p class="lead">Jack of all trades, master of all</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about__side">
+        <figure class="card about__photo reveal" style="--i:0">
+          <div class="photo__frame">
+            <img src="about/thejas.jpg" alt="Portrait of Thejas U" width="900" height="900" decoding="async">
+          </div>
+          <span class="photo__tag"><i class="status__dot" aria-hidden="true"></i>Available for projects</span>
+          <figcaption class="photo__cap"><strong>Thejas U</strong><small>Trader · Designer · Developer</small></figcaption>
+        </figure>
+        <article class="card about__stat reveal" style="--i:3">
+          <p class="stat__number">03</p>
+          <p class="eyebrow">Disciplines</p>
+          <ul class="stat__list"><li>Trading</li><li>Design</li><li>Development</li></ul>
+        </article>
+        </div>
+
+        <div class="about__main">
+        <article class="card about__story reveal" style="--i:1">
+          <p class="eyebrow">My story</p>
+          <p class="about__lead">At this point, I'm just trying to turn caffeine into code, curiosity into capital, and random 3 AM ideas into something profitable.</p>
+          <p>The goal is financial freedom, creative domination, and enough money to never check a price tag again. The strategy? Questionable. The sleep schedule? Non-existent. The confidence? Unreasonably high. The execution? Currently compiling.</p>
+          <p>If you're building, trading, designing, or just trying to turn your caffeine addiction into generational wealth, let's connect. We might build the next big thing, or at least lose sleep over it together. Drop a follow. Let's make our questionable life choices look like a success story.</p>
+        </article>
+        <article class="card about__edu reveal" style="--i:2">
+          <span class="edu__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+          </span>
+          <p class="eyebrow">Education</p>
+          <h3>Malnad College of Engineering</h3>
+          <p class="edu__deg">B.E. in Computer Science and Business Systems</p>
+          <p class="edu__meta"><span class="pill pill--live">Graduated</span><span>Hassan, Karnataka</span></p>
+        </article>
+        </div>
+
+        <section class="card about__interests reveal" style="--i:4" aria-label="Interests">
+          <div class="int__head"><p class="eyebrow">Interests</p><p class="int__sub">The things I keep coming back to</p></div>
+          <ul class="int__grid">
+          <li class="int" style="--i:0; --c1:#ff375f; --c2:#ff9f0a" tabindex="0">
+            <span class="int__no" aria-hidden="true">01</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg>
+            <strong>Designing</strong>
+          </li>
+          <li class="int" style="--i:1; --c1:#0a84ff; --c2:#5e5ce6" tabindex="0">
+            <span class="int__no" aria-hidden="true">02</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/><path d="M14 4l-4 16" opacity=".6"/></svg>
+            <strong>Coding</strong>
+          </li>
+          <li class="int" style="--i:2; --c1:#30d158; --c2:#64d2ff" tabindex="0">
+            <span class="int__no" aria-hidden="true">03</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11h6M11 8v6" opacity=".6"/></svg>
+            <strong>Researching</strong>
+          </li>
+          <li class="int" style="--i:3; --c1:#ff9f0a; --c2:#ff453a" tabindex="0">
+            <span class="int__no" aria-hidden="true">04</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>
+            <strong>Fitness</strong>
+          </li>
+          
+          <li class="int" style="--i:4; --c1:#64d2ff; --c2:#0a84ff" tabindex="0">
+            <span class="int__no" aria-hidden="true">05</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1" opacity=".6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
+            <strong>Tech</strong>
+          </li>
+          <li class="int" style="--i:5; --c1:#bf5af2; --c2:#ff375f" tabindex="0">
+            <span class="int__no" aria-hidden="true">06</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L17 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.8"/></svg>
+            <strong>Photography</strong>
+          </li>
+          <li class="int" style="--i:6; --c1:#ffd60a; --c2:#ff9f0a" tabindex="0">
+            <span class="int__no" aria-hidden="true">07</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12L3 7M12 12v10" opacity=".6"/></svg>
+            <strong>Product Design</strong>
+          </li>
+          <li class="int" style="--i:7; --c1:#ff6b9d; --c2:#bf5af2" tabindex="0">
+            <span class="int__no" aria-hidden="true">08</span>
+            <svg class="int__icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" opacity=".7"/></svg>
+            <strong>Aesthetics &amp; Details</strong>
+          </li>
+          </ul>
+        </section>
+
+        <a class="card about__cta reveal" style="--i:5" href="index.html#contact">
+          <span class="cta__dot status__dot" aria-hidden="true"></span>
+          <p class="cta__big">Available for projects</p>
+          <p class="cta__small">Let's build something together</p>
+          <span class="cta__go" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">Thejas U</a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="trading.html">Trading</a>
+        <a href="design.html">Design</a>
+        <a href="developer.html">Developer</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="#" class="footer__top">Back to top ↑</a>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">© <span id="year">2026</span> Thejas U. Trading, design and code.</p>
+      <nav class="footer__social" aria-label="Social links">
+        <a href="https://github.com/ByThejas" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/thejasumesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/thejasumesh" target="_blank" rel="noopener noreferrer">Behance</a>
+        <a href="https://x.com/ByThejas" target="_blank" rel="noopener noreferrer">X</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="depth.js"></script>
+  <script src="interact3d.js"></script>
+</body>
+</html>

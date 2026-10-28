@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%23ff375f%27/%3E%3Cstop offset=%271%27 stop-color=%27%230a84ff%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27url(%23g)%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Arial%27 font-weight=%27800%27 font-size=%2730%27 text-anchor=%27middle%27 fill=%27white%27%3ETU%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Projects | Thejas U">
+  <meta property="og:description" content="Software projects built by Thejas U.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thejas U">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og.png">
+  <meta name="theme-color" content="#000000">
+  <title>Projects | Thejas U</title>
+  <meta name="description" content="Software projects built by Thejas U.">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var theme = "dark";
+      try {
+        theme = localStorage.getItem("theme") ||
+          (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      } catch (e) {}
+      root.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="depth.css">
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+  </div>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Home">TU</a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="trading.html">Trading</a>
+      <a href="design.html">Design</a>
+      <a href="developer.html" class="is-active">Developer</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="index.html#contact" class="btn">Let's talk</a>
+    </div>
+  </header>
+
+  <main class="subpage">
+
+    <div class="page-top">
+      <a class="back" href="index.html#work">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        What I do
+      </a>
+      <a class="btn resume-btn" href="resume/Thejas_U_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        Resume
+      </a>
+    </div>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+
+      <div class="projects__head reveal">
+        <div class="sc sc--dev" aria-hidden="true"><div class="sc__scene"></div></div>
+        <div>
+          <p class="eyebrow">Software developer</p>
+          <h1 id="projects-title">Things I've built.</h1>
+        </div>
+        <p class="lead">Software I am building and shipping. Each one started as a problem worth solving properly.</p>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- Featured: KAIZEN -->
+        <article class="card project project--feature reveal" style="--i:0; --c1:#ff3b30; --c2:#ff9500; --c3:#ff2d55">
+          <div class="project__cover has-shot">
+            <a class="project__cover-link" href="https://kaizen-online.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open KAIZEN live site"></a>
+            <img class="project__shot" src="projects/kaizen.jpg" alt="KAIZEN PDF Toolkit home screen" onerror="this.parentNode.classList.remove('has-shot');this.remove()">
+            <span class="project__mark project__mark--jp" aria-hidden="true">改善</span>
+            <span class="project__arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <div class="project__body">
+            <p class="eyebrow">PDF software</p>
+            <h3>KAIZEN PDF Toolkit</h3>
+            <p>An open-source, browser-based toolkit for PDFs, images and documents, built on one design system and a reusable tool workspace.</p>
+            <div class="project__meta">
+              <span class="pill pill--live">Live</span>
+              <span class="project__stat"><strong>38</strong> tools</span>
+              <span class="project__links">
+                <a href="https://kaizen-online.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <i aria-hidden="true">↗</i></a>
+                <a href="https://github.com/sumeethofficial-svg/KAIZEN" target="_blank" rel="noopener noreferrer">GitHub <i aria-hidden="true">↗</i></a>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        
+        <article class="card project project--a project--soon reveal" style="--i:1; --c1:#0a84ff; --c2:#bf5af2; --c3:#5e5ce6">
+          <div class="project__cover has-shot">
+            <img class="project__shot" src="projects/code-mind.jpg" alt="CodeMind overview screen" onerror="this.parentNode.classList.remove('has-shot');this.remove()">
+            <svg class="project__glyph" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                 stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 18L8 32l14 14M42 18l14 14-14 14M36 14L28 50"/>
+            </svg>
+          </div>
+          <div class="project__body">
+            <p class="eyebrow">AI developer tool</p>
+            <h3>Code-Mind</h3>
+            <p>Index a GitHub repository, then ask questions and get answers that cite the exact files and lines. Runs locally on free models.</p>
+            <div class="project__meta">
+              <span class="pill pill--soon">Coming soon</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project project--a2 reveal" style="--i:2; --c1:#30d158; --c2:#64d2ff; --c3:#0a84ff">
+          <div class="project__cover has-shot">
+            <a class="project__cover-link" href="https://productivity-116.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open Productivity-116 live site"></a>
+            <img class="project__shot" src="projects/productivity-116.jpg" alt="Productivity-116 journey settings screen" onerror="this.parentNode.classList.remove('has-shot');this.remove()">
+            <svg class="project__glyph" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                 stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="32" cy="32" r="22"/><path d="M21 33l8 8 15-17"/>
+            </svg>
+            <span class="project__arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <div class="project__body">
+            <p class="eyebrow">Web app</p>
+            <h3>Productivity-116</h3>
+            <p>A React and Vite tracker for goals, daily commitments, focus, planning, hydration and progress across a 115-day journey.</p>
+            <div class="project__meta">
+              <span class="pill pill--live">Live</span>
+              <span class="project__links">
+                <a href="https://productivity-116.vercel.app" target="_blank" rel="noopener noreferrer">Live site <i aria-hidden="true">↗</i></a>
+                <a href="https://github.com/ByThejas/Productivity-116" target="_blank" rel="noopener noreferrer">GitHub <i aria-hidden="true">↗</i></a>
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- CASE STUDIES -->
+    <section class="cases" id="cases" aria-labelledby="cases-title">
+      <div class="projects__head reveal">
+        <div>
+          <p class="eyebrow">Case studies</p>
+          <h2 id="cases-title">How they came together.</h2>
+        </div>
+        <p class="lead">The goal, the approach and where each project stands today.</p>
+      </div>
+
+      <div class="cases__grid">
+        <article class="card case reveal" style="--i:0; --c:#ff9500">
+          <p class="eyebrow">KAIZEN · PDF toolkit</p>
+          <dl>
+            <div><dt>Goal</dt><dd>One place for everyday file jobs that stays private, fast and simple, processing files locally whenever the workflow allows.</dd></div>
+            <div><dt>Approach</dt><dd>React and Vite, a locked design system and one reusable tool workspace, so every new tool plugs into the same shell. Built in phases, from foundation and design system to the PDF engine and the tools themselves.</dd></div>
+            <div><dt>Result</dt><dd>Live and open source (MIT) with 38 tools across Image, PDF and Document categories.</dd></div>
+          </dl>
+          <a class="case__link" href="https://github.com/sumeethofficial-svg/KAIZEN" target="_blank" rel="noopener noreferrer">Read the code <i aria-hidden="true">↗</i></a>
+        </article>
+
+        <article class="card case reveal" style="--i:1; --c:#30d158">
+          <p class="eyebrow">Productivity-116 · Web app</p>
+          <dl>
+            <div><dt>Goal</dt><dd>Turn one long-term goal into daily commitments across a 115-day journey, and make progress visible every day.</dd></div>
+            <div><dt>Approach</dt><dd>React and Vite with a journey spiral, focus timer, hydration tracking and a daily timeline. All data stays in the browser with local persistence, plus migration and recovery for saved data.</dd></div>
+            <div><dt>Result</dt><dd>Deployed on Vercel with dark, light and system themes.</dd></div>
+          </dl>
+          <a class="case__link" href="https://github.com/ByThejas/Productivity-116" target="_blank" rel="noopener noreferrer">Read the code <i aria-hidden="true">↗</i></a>
+        </article>
+
+        <article class="card case reveal" style="--i:2; --c:#64d2ff">
+          <p class="eyebrow">Grid Bot · Trading automation</p>
+          <dl>
+            <div><dt>Goal</dt><dd>Capture small profits from price swings on BTC/USDT and ETH/USDT without trying to predict direction.</dd></div>
+            <div><dt>Approach</dt><dd>A grid of orders adjusted by three signals (supply and demand, liquidity, sentiment), with layered risk limits, a daily loss kill switch, a backtester and Telegram alerts.</dd></div>
+            <div><dt>Result</dt><dd>Validated with a 25-hour continuous run on Binance testnet, ahead of a small real-money canary.</dd></div>
+          </dl>
+          <a class="case__link" href="https://github.com/ByThejas/grid-bot" target="_blank" rel="noopener noreferrer">Read the code <i aria-hidden="true">↗</i></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="stack-section" id="stack" aria-labelledby="stack-title">
+
+      <div class="projects__head reveal">
+        <div>
+          <p class="eyebrow">Tech stack</p>
+          <h2 class="gh-h2" id="stack-title">What I build with.</h2>
+        </div>
+        <p class="lead">Languages, frameworks, databases and tools. Filter by area, or hover a step in the flow to see what powers it.</p>
+      </div>
+
+      <article class="card stack reveal" id="stack-card" style="--i:0">
+
+        <div class="stack__bar">
+          <div class="seg" id="stack-seg" role="group" aria-label="Filter technologies">
+            <span class="seg__pill" aria-hidden="true"></span>
+            <button class="seg__btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="seg__btn" type="button" data-filter="languages" aria-pressed="false">Languages</button>
+            <button class="seg__btn" type="button" data-filter="frontend" aria-pressed="false">Frontend</button>
+            <button class="seg__btn" type="button" data-filter="backend" aria-pressed="false">Backend</button>
+            <button class="seg__btn" type="button" data-filter="databases" aria-pressed="false">Databases</button>
+            <button class="seg__btn" type="button" data-filter="devops" aria-pressed="false">DevOps &amp; Tools</button>
+          </div>
+          <p class="stack__count" id="stack-count" aria-live="polite"><strong>24</strong> technologies</p>
+        </div>
+
+        <ul class="tchips" id="stack-grid">
+          <li class="tchip" data-cat="languages" data-flow="interface api" style="--b:#3178c6; --f:#fff; --d:0ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>TS</b><img src="https://cdn.simpleicons.org/typescript" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>TypeScript</strong><small>Language</small></span>
+          </li>
+          <li class="tchip" data-cat="languages" data-flow="interface api" style="--b:#f7df1e; --f:#1a1a1a; --d:35ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>JS</b><img src="https://cdn.simpleicons.org/javascript" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>JavaScript</strong><small>Language</small></span>
+          </li>
+          <li class="tchip" data-cat="languages" data-flow="api" style="--b:#3776ab; --f:#ffd43b; --d:70ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Py</b><img src="https://cdn.simpleicons.org/python" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Python</strong><small>Language</small></span>
+          </li>
+          <li class="tchip" data-cat="languages" data-flow="api" style="--b:#e76f00; --f:#ffffff; --d:0ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Jv</b><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="" width="24" height="24" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://cdn.simpleicons.org/openjdk'}else{this.parentNode.classList.remove('has-img');this.remove()}"></span>
+            <span class="tchip__text"><strong>Java</strong><small>Language</small></span>
+          </li>
+          <li class="tchip" data-cat="frontend" data-flow="interface" style="--b:#61dafb; --f:#0b2a35; --d:105ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Re</b><img src="https://cdn.simpleicons.org/react" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>React</strong><small>Library</small></span>
+          </li>
+          <li class="tchip" data-cat="frontend" data-flow="interface" style="--b:#111111; --f:#ffffff; --d:140ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Nx</b><img src="https://cdn.simpleicons.org/nextdotjs" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Next.js</strong><small>Framework</small></span>
+          </li>
+          <li class="tchip" data-cat="frontend" data-flow="interface" style="--b:#06b6d4; --f:#ffffff; --d:175ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Tw</b><img src="https://cdn.simpleicons.org/tailwindcss" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Tailwind CSS</strong><small>Styling</small></span>
+          </li>
+          <li class="tchip" data-cat="frontend" data-flow="interface" style="--b:#52525b; --f:#ffffff; --d:210ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Sh</b><img src="https://cdn.simpleicons.org/shadcnui" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Shadcn UI</strong><small>Components</small></span>
+          </li>
+          <li class="tchip" data-cat="backend" data-flow="api" style="--b:#5fa04e; --f:#ffffff; --d:245ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>No</b><img src="https://cdn.simpleicons.org/nodedotjs" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Node.js</strong><small>Runtime</small></span>
+          </li>
+          <li class="tchip" data-cat="backend" data-flow="api" style="--b:#71717a; --f:#ffffff; --d:280ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Ex</b><img src="https://cdn.simpleicons.org/express" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Express.js</strong><small>Framework</small></span>
+          </li>
+          <li class="tchip" data-cat="backend" data-flow="api" style="--b:#6db33f; --f:#ffffff; --d:0ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Sp</b><img src="https://cdn.simpleicons.org/springboot" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Spring Boot</strong><small>Framework</small></span>
+          </li>
+          <li class="tchip" data-cat="backend" data-flow="api" style="--b:#ff9f0a; --f:#2a1800; --d:315ms">
+            <span class="tchip__logo" aria-hidden="true">API</span>
+            <span class="tchip__text"><strong>REST APIs</strong><small>Architecture</small></span>
+          </li>
+          <li class="tchip" data-cat="backend" data-flow="api" style="--b:#d63aff; --f:#ffffff; --d:350ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>JWT</b><img src="https://cdn.simpleicons.org/jsonwebtokens" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>JWT</strong><small>Auth</small></span>
+          </li>
+          <li class="tchip" data-cat="databases" data-flow="data" style="--b:#336791; --f:#ffffff; --d:385ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Pg</b><img src="https://cdn.simpleicons.org/postgresql" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>PostgreSQL</strong><small>SQL</small></span>
+          </li>
+          <li class="tchip" data-cat="databases" data-flow="data" style="--b:#47a248; --f:#ffffff; --d:420ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Mg</b><img src="https://cdn.simpleicons.org/mongodb" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>MongoDB</strong><small>NoSQL</small></span>
+          </li>
+          <li class="tchip" data-cat="databases" data-flow="data" style="--b:#5a67d8; --f:#ffffff; --d:455ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Pr</b><img src="https://cdn.simpleicons.org/prisma" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Prisma</strong><small>ORM</small></span>
+          </li>
+          <li class="tchip" data-cat="databases" data-flow="data" style="--b:#3ecf8e; --f:#06281a; --d:490ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Su</b><img src="https://cdn.simpleicons.org/supabase" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Supabase</strong><small>BaaS</small></span>
+          </li>
+          <li class="tchip" data-cat="databases" data-flow="data" style="--b:#ffca28; --f:#2a2000; --d:525ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Fb</b><img src="https://cdn.simpleicons.org/firebase" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Firebase</strong><small>BaaS</small></span>
+          </li>
+          <li class="tchip" data-cat="devops" data-flow="ship" style="--b:#f05032; --f:#ffffff; --d:560ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Gt</b><img src="https://cdn.simpleicons.org/git" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Git</strong><small>Version control</small></span>
+          </li>
+          <li class="tchip" data-cat="devops" data-flow="ship" style="--b:#30363d; --f:#ffffff; --d:595ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>GH</b><img src="https://cdn.simpleicons.org/github" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>GitHub</strong><small>Collaboration</small></span>
+          </li>
+          <li class="tchip" data-cat="devops" data-flow="api ship" style="--b:#ff6c37; --f:#ffffff; --d:630ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Pm</b><img src="https://cdn.simpleicons.org/postman" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Postman</strong><small>API testing</small></span>
+          </li>
+          <li class="tchip" data-cat="devops" data-flow="ship" style="--b:#000000; --f:#ffffff; --d:665ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Vc</b><img src="https://cdn.simpleicons.org/vercel" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Vercel</strong><small>Deployment</small></span>
+          </li>
+          <li class="tchip" data-cat="devops" data-flow="interface" style="--b:#a259ff; --f:#ffffff; --d:700ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Fg</b><img src="https://cdn.simpleicons.org/figma" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Figma</strong><small>Design</small></span>
+          </li>
+          <li class="tchip" data-cat="devops" data-flow="ship" style="--b:#2496ed; --f:#ffffff; --d:735ms">
+            <span class="tchip__logo has-img" aria-hidden="true"><b>Dk</b><img src="https://cdn.simpleicons.org/docker" alt="" width="24" height="24" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
+            <span class="tchip__text"><strong>Docker</strong><small>Containers</small></span>
+          </li>
+        </ul>
+
+        <div class="flow" id="stack-flow">
+          <p class="eyebrow">How a request travels</p>
+          <ol class="flow__track">
+            <li class="flow__node" data-hl="interface" tabindex="0"><span class="flow__n">01</span><strong>Interface</strong><small>React · Next.js · Tailwind</small></li>
+            <li class="flow__link" aria-hidden="true" style="--d:0s"><i></i></li>
+            <li class="flow__node" data-hl="api" tabindex="0"><span class="flow__n">02</span><strong>API</strong><small>Node.js · Express · JWT</small></li>
+            <li class="flow__link" aria-hidden="true" style="--d:0.8s"><i></i></li>
+            <li class="flow__node" data-hl="data" tabindex="0"><span class="flow__n">03</span><strong>Data</strong><small>MongoDB · PostgreSQL · Prisma</small></li>
+            <li class="flow__link" aria-hidden="true" style="--d:1.6s"><i></i></li>
+            <li class="flow__node" data-hl="ship" tabindex="0"><span class="flow__n">04</span><strong>Ship</strong><small>Git · Vercel · Docker</small></li>
+          </ol>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- GITHUB ACTIVITY -->
+    <section class="gh-section" id="github" aria-labelledby="gh-title">
+
+      <div class="projects__head reveal">
+        <div>
+          <p class="eyebrow">GitHub</p>
+          <h2 class="gh-h2" id="gh-title">Contribution calendar.</h2>
+        </div>
+        <p class="lead">A year of commits, pull requests and issues, pulled live from my GitHub profile.</p>
+      </div>
+
+      <article class="card gh reveal" id="gh" style="--i:0">
+        <div class="gh__top">
+          <div class="gh__total">
+            <strong id="gh-total">0</strong>
+            <span id="gh-meta">Loading activity…</span>
+          </div>
+          <a class="gh__link" id="gh-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <span>github.com</span>
+          </a>
+        </div>
+
+        <div class="gh__scroll" id="gh-scroll">
+          <div class="gh__body">
+            <div class="gh__months" id="gh-months" aria-hidden="true"></div>
+            <div class="gh__days" aria-hidden="true"><span>Mon</span><span>Wed</span><span>Fri</span></div>
+            <div class="gh__graph" id="gh-graph" role="img" aria-label="GitHub contribution calendar for the last year"></div>
+          </div>
+        </div>
+
+        <div class="gh__foot">
+          <div class="gh__stats" id="gh-stats"></div>
+          <div class="gh__legend" aria-hidden="true">
+            <span>Less</span><i class="gh__cell l0"></i><i class="gh__cell l1"></i><i class="gh__cell l2"></i><i class="gh__cell l3"></i><i class="gh__cell l4"></i><span>More</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">Thejas U</a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="trading.html">Trading</a>
+        <a href="design.html">Design</a>
+        <a href="developer.html">Developer</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="#" class="footer__top">Back to top ↑</a>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">© <span id="year">2026</span> Thejas U. Trading, design and code.</p>
+      <nav class="footer__social" aria-label="Social links">
+        <a href="https://github.com/ByThejas" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/thejasumesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/thejasumesh" target="_blank" rel="noopener noreferrer">Behance</a>
+        <a href="https://x.com/ByThejas" target="_blank" rel="noopener noreferrer">X</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="depth.js"></script>
+  <script src="interact3d.js"></script>
+  <script src="shapes3d.js"></script>
+  <script src="developer.js"></script>
+  <script src="stack.js"></script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%23ff375f%27/%3E%3Cstop offset=%271%27 stop-color=%27%230a84ff%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27url(%23g)%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Arial%27 font-weight=%27800%27 font-size=%2730%27 text-anchor=%27middle%27 fill=%27white%27%3ETU%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Design Gallery | Thejas U">
+  <meta property="og:description" content="Graphic design work by Thejas U: branding, posters, social and illustration, made in Photoshop and Illustrator.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thejas U">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og.png">
+  <meta name="theme-color" content="#000000">
+  <title>Design Gallery | Thejas U</title>
+  <meta name="description" content="Graphic design work by Thejas U: branding, posters, social and illustration, made in Photoshop and Illustrator.">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var theme = "dark";
+      try {
+        theme = localStorage.getItem("theme") ||
+          (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      } catch (e) {}
+      root.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="depth.css">
+  <link rel="stylesheet" href="collections.css">
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+  </div>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Home">TU</a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="trading.html">Trading</a>
+      <a href="design.html" class="is-active">Design</a>
+      <a href="developer.html">Developer</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="index.html#contact" class="btn">Let's talk</a>
+    </div>
+  </header>
+
+  <main class="subpage">
+
+    <div class="page-top">
+      <a class="back" href="index.html#work">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        What I do
+      </a>
+    </div>
+
+    <!-- DESIGN GALLERY -->
+    <section class="gallery collections" id="collections" aria-labelledby="gallery-title">
+
+      <div class="gallery__head reveal">
+        <div class="sc sc--design" aria-hidden="true"><div class="sc__scene"></div></div>
+        <div class="gallery__copy">
+          <p class="eyebrow">Graphic design</p>
+          <h1 id="gallery-title">Pixels <span class="grad">&amp;</span> vectors.</h1>
+          <p class="lead">6+ years of graphic design, mostly in Adobe Photoshop and Illustrator.</p>
+        </div>
+
+        <div class="badge" aria-hidden="true">
+          <svg class="badge__ring" viewBox="0 0 200 200">
+            <defs>
+              <path id="ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/>
+            </defs>
+            <text>
+              <textPath href="#ring" textLength="486" lengthAdjust="spacing">6+ YEARS • PHOTOSHOP • ILLUSTRATOR • </textPath>
+            </text>
+          </svg>
+          <span class="badge__center">6+</span>
+        </div>
+      </div>
+
+      <p class="folders__hint reveal">Open a folder to browse the work inside.</p>
+      <div class="folders" id="folders">
+        <button class="folder folder--music reveal" type="button" data-set="music" style="--i:0; --acc:#ff6a1a; --acc2:#ffb347"
+                aria-haspopup="dialog" aria-label="Open the Music folder, 5 designs">
+          <span class="folder__back"><span class="folder__tab">01 · Music</span></span>
+          <span class="folder__disc" aria-hidden="true"></span>
+          <span class="folder__sheets" aria-hidden="true"><img class="sheet s1" src="designs/thumbs/utopia-orange.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s2" src="designs/thumbs/utopia-pink.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s3" src="designs/thumbs/dawn-fm.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+          <span class="folder__front">
+            <span class="folder__eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="folder__meta">
+              <small>Collection 01</small>
+              <strong>Music</strong>
+              <em>Covers, sleeves and posters</em>
+            </span>
+            <span class="folder__foot">
+              <span class="folder__count"><b>5</b> designs</span>
+              <span class="folder__open">Open folder <i aria-hidden="true">→</i></span>
+            </span>
+          </span>
+        </button>
+
+        <button class="folder folder--greek reveal" type="button" data-set="greek" style="--i:1; --acc:#d9b45a; --acc2:#f3e2a9"
+                aria-haspopup="dialog" aria-label="Open the Greek Gods folder, 4 designs">
+          <span class="folder__back"><span class="folder__tab">02 · Greek Gods</span></span>
+          
+          <span class="folder__sheets" aria-hidden="true"><img class="sheet s1" src="designs/thumbs/apollo.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s2" src="designs/thumbs/zen.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s3" src="designs/thumbs/hermes.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+          <span class="folder__front">
+            <span class="folder__laurel" aria-hidden="true">Α · Ω</span>
+            <span class="folder__meta">
+              <small>Collection 02</small>
+              <strong>Greek Gods</strong>
+              <em>Marble, gold and myth</em>
+            </span>
+            <span class="folder__foot">
+              <span class="folder__count"><b>4</b> designs</span>
+              <span class="folder__open">Open folder <i aria-hidden="true">→</i></span>
+            </span>
+          </span>
+        </button>
+
+        <button class="folder folder--grunge reveal" type="button" data-set="grunge" style="--i:2; --acc:#9aa4ae; --acc2:#d8dde2"
+                aria-haspopup="dialog" aria-label="Open the Grunge folder, 3 designs">
+          <span class="folder__back"><span class="folder__tab">03 · Grunge</span></span>
+          
+          <span class="folder__sheets" aria-hidden="true"><img class="sheet s1" src="designs/thumbs/requiem.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s2" src="designs/thumbs/bones-bloodlines.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s3" src="designs/thumbs/grimcoil.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+          <span class="folder__front">
+            <span class="folder__stamp" aria-hidden="true">Archive</span>
+            <span class="folder__meta">
+              <small>Collection 03</small>
+              <strong>Grunge</strong>
+              <em>Torn, scratched, photocopied</em>
+            </span>
+            <span class="folder__foot">
+              <span class="folder__count"><b>3</b> designs</span>
+              <span class="folder__open">Open folder <i aria-hidden="true">→</i></span>
+            </span>
+          </span>
+        </button>
+
+        <button class="folder folder--sacred reveal" type="button" data-set="sacred" style="--i:3; --acc:#d62839; --acc2:#ff7b87"
+                aria-haspopup="dialog" aria-label="Open the Sacred & Symbols folder, 4 designs">
+          <span class="folder__back"><span class="folder__tab">04 · Sacred & Symbols</span></span>
+          
+          <span class="folder__sheets" aria-hidden="true"><img class="sheet s1" src="designs/thumbs/nataraja.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s2" src="designs/thumbs/new-world-order.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"><img class="sheet s3" src="designs/thumbs/last-supper.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+          <span class="folder__front">
+            <span class="folder__seal" aria-hidden="true"></span>
+            <span class="folder__meta">
+              <small>Collection 04</small>
+              <strong>Sacred & Symbols</strong>
+              <em>Beliefs, icons and statements</em>
+            </span>
+            <span class="folder__foot">
+              <span class="folder__count"><b>4</b> designs</span>
+              <span class="folder__open">Open folder <i aria-hidden="true">→</i></span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+
+    <!-- BEHANCE -->
+    <div class="bh-wrap">
+      <a class="card bh reveal" href="https://www.behance.net/thejasumesh" target="_blank" rel="noopener noreferrer">
+        <span class="bh__mark" aria-hidden="true">Bē</span>
+        <span class="bh__text">
+          <span class="eyebrow">Behance</span>
+          <strong>See the full portfolio and case studies</strong>
+        </span>
+        <span class="bh__go" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <!-- DISCIPLINES MARQUEE -->
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Branding</span><i></i><span>Logos</span><i></i><span>Posters</span><i></i><span>Social</span><i></i><span>Illustration</span><i></i><span>Typography</span><i></i><span>Colour</span><i></i>
+        <span>Branding</span><i></i><span>Logos</span><i></i><span>Posters</span><i></i><span>Social</span><i></i><span>Illustration</span><i></i><span>Typography</span><i></i><span>Colour</span><i></i>
+      </div>
+    </div>
+
+    <!-- TOOLBOX -->
+    <section class="dz-section" id="toolbox" aria-labelledby="toolbox-title">
+      <div class="projects__head reveal">
+        <div>
+          <p class="eyebrow">Toolbox</p>
+          <h2 class="gh-h2" id="toolbox-title">Tools of the trade.</h2>
+        </div>
+        <p class="lead">Six tools I move between, from pixels and vectors to layouts, interfaces and video.</p>
+      </div>
+
+      <div class="tools-grid">
+
+        <article class="card tool reveal" style="--i:0; --c1:#ff375f; --c2:#bf5af2">
+          <span class="tool__glyph" aria-hidden="true">Ps</span>
+          <div class="tool__app has-logo" aria-hidden="true"><img src="icons/photoshop.svg" alt="" width="64" height="64" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><span>Ps</span></div>
+          <p class="eyebrow">Pixels</p>
+          <h3>Adobe Photoshop</h3>
+          <p>Compositing, retouching, posters and social creatives. Where an idea gets texture, light and depth.</p>
+          <div class="tags"><span>Compositing</span><span>Retouching</span><span>Posters</span><span>Social</span></div>
+        </article>
+
+        <article class="card tool reveal" style="--i:1; --c1:#ff9f0a; --c2:#ff375f">
+          <span class="tool__glyph" aria-hidden="true">Ai</span>
+          <div class="tool__app has-logo" aria-hidden="true"><img src="icons/illustrator.svg" alt="" width="64" height="64" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><span>Ai</span></div>
+          <p class="eyebrow">Vectors</p>
+          <h3>Adobe Illustrator</h3>
+          <p>Logos, icons, illustration and brand systems. Anything that has to stay sharp at every size.</p>
+          <div class="tags"><span>Logos</span><span>Icons</span><span>Illustration</span><span>Brand systems</span></div>
+        </article>
+
+        <article class="card tool reveal" style="--i:2; --c1:#0a84ff; --c2:#64d2ff">
+          <span class="tool__glyph" aria-hidden="true">Lr</span>
+          <div class="tool__app has-logo" aria-hidden="true"><img src="icons/lightroom.svg" alt="" width="64" height="64" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><span>Lr</span></div>
+          <p class="eyebrow">Photos</p>
+          <h3>Adobe Lightroom</h3>
+          <p>Colour grading and batch edits that keep a whole set of photos looking like one story.</p>
+          <div class="tags"><span>Colour grading</span><span>Batch edits</span><span>Presets</span><span>Photo finishing</span></div>
+        </article>
+
+        <article class="card tool reveal" style="--i:3; --c1:#bf5af2; --c2:#ff375f">
+          <span class="tool__glyph" aria-hidden="true">Id</span>
+          <div class="tool__app has-logo" aria-hidden="true"><img src="icons/indesign.svg" alt="" width="64" height="64" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><span>Id</span></div>
+          <p class="eyebrow">Layout</p>
+          <h3>Adobe InDesign</h3>
+          <p>Multi-page layouts with real grids and type, built to go to print or PDF without surprises.</p>
+          <div class="tags"><span>Editorial</span><span>Brochures</span><span>Print-ready</span><span>Typography</span></div>
+        </article>
+
+        <article class="card tool reveal" style="--i:4; --c1:#30d158; --c2:#0a84ff">
+          <span class="tool__glyph" aria-hidden="true">Fg</span>
+          <div class="tool__app has-logo" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/figma/figma-original.svg" alt="" width="64" height="64" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><span>Fg</span></div>
+          <p class="eyebrow">Interface</p>
+          <h3>Figma</h3>
+          <p>Wireframes, interfaces and prototypes, and the design systems that keep them consistent.</p>
+          <div class="tags"><span>Wireframes</span><span>Prototypes</span><span>UI design</span><span>Design systems</span></div>
+        </article>
+
+        <article class="card tool reveal" style="--i:5; --c1:#5e5ce6; --c2:#bf5af2">
+          <span class="tool__glyph" aria-hidden="true">Pr</span>
+          <div class="tool__app has-logo" aria-hidden="true"><img src="icons/premiere.svg" alt="" width="64" height="64" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><span>Pr</span></div>
+          <p class="eyebrow">Video</p>
+          <h3>Adobe Premiere Pro</h3>
+          <p>Cutting reels and short videos with tight pacing, clean sound and a consistent colour look.</p>
+          <div class="tags"><span>Video editing</span><span>Reels</span><span>Colour</span><span>Audio sync</span></div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="dz-section" id="process" aria-labelledby="process-title">
+      <div class="projects__head reveal">
+        <div>
+          <p class="eyebrow">Process</p>
+          <h2 class="gh-h2" id="process-title">From brief to final file.</h2>
+        </div>
+        <p class="lead">The same five steps, whether it is a logo or a full campaign.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="card step reveal" style="--i:0"><span class="step__n">01</span><h3>Brief</h3><p>Understand the goal, the audience and what success looks like.</p></li>
+        <li class="card step reveal" style="--i:1"><span class="step__n">02</span><h3>Concept</h3><p>Sketches, references and a direction worth committing to.</p></li>
+        <li class="card step reveal" style="--i:2"><span class="step__n">03</span><h3>Build</h3><p>Shape it in Illustrator or Photoshop with grids, type and colour.</p></li>
+        <li class="card step reveal" style="--i:3"><span class="step__n">04</span><h3>Refine</h3><p>Spacing, contrast and detail, until nothing feels accidental.</p></li>
+        <li class="card step reveal" style="--i:4"><span class="step__n">05</span><h3>Deliver</h3><p>Clean files, ready for print, web and social.</p></li>
+      </ol>
+    </section>
+
+    <!-- PALETTE LAB -->
+    <section class="dz-section" id="lab" aria-labelledby="lab-title">
+      <div class="projects__head reveal">
+        <div>
+          <p class="eyebrow">Play</p>
+          <h2 class="gh-h2" id="lab-title">Palette lab.</h2>
+        </div>
+        <p class="lead">Colour is where I start. Drag the hue, pick a harmony and tap a swatch to copy its hex.</p>
+      </div>
+
+      <article class="card lab reveal" id="lab-card" style="--i:0">
+
+        <div class="lab__controls">
+          <div class="lab__modes" id="lab-modes" role="group" aria-label="Colour harmony">
+            <button type="button" class="lab__mode is-active" data-mode="analogous" aria-pressed="true">Analogous</button>
+            <button type="button" class="lab__mode" data-mode="complementary" aria-pressed="false">Complementary</button>
+            <button type="button" class="lab__mode" data-mode="triadic" aria-pressed="false">Triadic</button>
+            <button type="button" class="lab__mode" data-mode="mono" aria-pressed="false">Mono</button>
+          </div>
+
+          <label class="lab__hue">
+            <span>Hue <strong id="lab-hue-val">210°</strong></span>
+            <input id="lab-hue" type="range" min="0" max="359" value="210" aria-label="Base hue">
+          </label>
+
+          <button class="lab__shuffle" id="lab-shuffle" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
+            </svg>
+            Surprise me
+          </button>
+        </div>
+
+        <div class="lab__swatches" id="lab-swatches"></div>
+
+        <div class="lab__poster" id="lab-poster" aria-hidden="true">
+          <span class="poster__orb"></span>
+          <span class="poster__bar"></span>
+          <span class="poster__tri"></span>
+          <strong>Aa</strong>
+          <small>Palette study</small>
+        </div>
+
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">Thejas U</a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="trading.html">Trading</a>
+        <a href="design.html">Design</a>
+        <a href="developer.html">Developer</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="#" class="footer__top">Back to top ↑</a>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">© <span id="year">2026</span> Thejas U. Trading, design and code.</p>
+      <nav class="footer__social" aria-label="Social links">
+        <a href="https://github.com/ByThejas" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/thejasumesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/thejasumesh" target="_blank" rel="noopener noreferrer">Behance</a>
+        <a href="https://x.com/ByThejas" target="_blank" rel="noopener noreferrer">X</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- GALLERY VIEWER -->
+
+
+  <dialog class="vault" id="vault" aria-label="Design viewer">
+    <div class="vault__glow" aria-hidden="true"></div>
+    <header class="vault__bar">
+      <div class="vault__title"><span class="vault__dot" aria-hidden="true"></span><span id="vault-set">Collection</span></div>
+      <span class="vault__count" id="vault-count" aria-live="polite">1 / 1</span>
+      <button class="vault__close" id="vault-close" type="button" aria-label="Close viewer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="vault__stage">
+      <button class="vault__nav vault__nav--prev" id="vault-prev" type="button" aria-label="Previous design">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <figure class="vault__fig"><img id="vault-img" alt=""><figcaption id="vault-cap"></figcaption></figure>
+      <button class="vault__nav vault__nav--next" id="vault-next" type="button" aria-label="Next design">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <div class="vault__thumbs" id="vault-thumbs" role="tablist" aria-label="Designs in this folder"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+  <script src="depth.js"></script>
+  <script src="interact3d.js"></script>
+  <script src="shapes3d.js"></script>
+  <script src="design.js"></script>
+  <script src="collections.js"></script>
+</body>
+</html>

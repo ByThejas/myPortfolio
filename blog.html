@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%23ff375f%27/%3E%3Cstop offset=%271%27 stop-color=%27%230a84ff%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27url(%23g)%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Arial%27 font-weight=%27800%27 font-size=%2730%27 text-anchor=%27middle%27 fill=%27white%27%3ETU%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Blog | Thejas U">
+  <meta property="og:description" content="Writing by Thejas U on trading, design and software.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Thejas U">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og.png">
+  <meta name="theme-color" content="#000000">
+  <title>Blog | Thejas U</title>
+  <meta name="description" content="Writing by Thejas U on trading, design and software.">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var theme = "dark";
+      try {
+        theme = localStorage.getItem("theme") ||
+          (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      } catch (e) {}
+      root.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="depth.css">
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+  </div>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Home">TU</a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="trading.html">Trading</a>
+      <a href="design.html">Design</a>
+      <a href="developer.html">Developer</a>
+      <a href="blog.html" class="is-active">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="index.html#contact" class="btn">Let's talk</a>
+    </div>
+  </header>
+
+  <main class="subpage">
+
+    <div class="page-top">
+      <a class="back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        Home
+      </a>
+    </div>
+
+    <section class="projects blog" id="blog" aria-labelledby="blog-title">
+      <div class="projects__head reveal">
+        <div>
+          <p class="eyebrow">Blog</p>
+          <h1 id="blog-title">Notes and writing.</h1>
+        </div>
+        <p class="lead">Thoughts on markets, design and building software. New posts are on the way.</p>
+      </div>
+
+      <div class="post-grid">
+        <article class="card post reveal" style="--i:0; --c1:#ff9f0a; --c2:#ffd60a">
+          <div class="post__cover" aria-hidden="true"></div>
+          <div class="post__body">
+            <p class="eyebrow">Trading</p>
+            <h3>Post title goes here</h3>
+            <p>A short summary of the post goes here. Replace this card with your own writing.</p>
+            <div class="post__meta"><span class="pill pill--soon">Coming soon</span><span class="project__stat">Date</span></div>
+          </div>
+        </article>
+        <article class="card post reveal" style="--i:1; --c1:#ff375f; --c2:#bf5af2">
+          <div class="post__cover" aria-hidden="true"></div>
+          <div class="post__body">
+            <p class="eyebrow">Design</p>
+            <h3>Post title goes here</h3>
+            <p>A short summary of the post goes here. Replace this card with your own writing.</p>
+            <div class="post__meta"><span class="pill pill--soon">Coming soon</span><span class="project__stat">Date</span></div>
+          </div>
+        </article>
+        <article class="card post reveal" style="--i:2; --c1:#0a84ff; --c2:#5e5ce6">
+          <div class="post__cover" aria-hidden="true"></div>
+          <div class="post__body">
+            <p class="eyebrow">Development</p>
+            <h3>Post title goes here</h3>
+            <p>A short summary of the post goes here. Replace this card with your own writing.</p>
+            <div class="post__meta"><span class="pill pill--soon">Coming soon</span><span class="project__stat">Date</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">Thejas U</a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="trading.html">Trading</a>
+        <a href="design.html">Design</a>
+        <a href="developer.html">Developer</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="#" class="footer__top">Back to top ↑</a>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">© <span id="year">2026</span> Thejas U. Trading, design and code.</p>
+      <nav class="footer__social" aria-label="Social links">
+        <a href="https://github.com/ByThejas" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/thejasumesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/thejasumesh" target="_blank" rel="noopener noreferrer">Behance</a>
+        <a href="https://x.com/ByThejas" target="_blank" rel="noopener noreferrer">X</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="depth.js"></script>
+</body>
+</html>

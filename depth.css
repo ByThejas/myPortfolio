@@ -1,0 +1,351 @@
+/* ==========================================================
+   Depth layer: 3D tilt, glare and the floating glass cube
+   ========================================================== */
+
+/* ---------- Tilt + glare ---------- */
+.tilt { transform-style: preserve-3d; will-change: transform; }
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.13), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.tilt.is-tilting .tilt-glare { opacity: 1; }
+:root[data-theme="light"] .tilt-glare {
+  background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.6), transparent 55%);
+}
+.tilt.is-tilting { box-shadow: 0 28px 60px -24px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--line-strong); }
+:root[data-theme="light"] .tilt.is-tilting { box-shadow: 0 28px 60px -26px rgba(20, 20, 40, 0.28), 0 0 0 1px var(--line-strong); }
+
+/* ---------- Floating glass cube ---------- */
+.cube-wrap {
+  --s: 92px;
+  position: absolute;
+  top: 38px;
+  right: 56px;
+  z-index: 1;
+  width: var(--s);
+  height: var(--s);
+  perspective: 520px;
+  pointer-events: none;
+  animation: cube-float 6s ease-in-out infinite;
+}
+.cube-wrap::after {                      /* soft floor shadow */
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -46px;
+  width: 80%;
+  height: 16px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.55), transparent);
+  filter: blur(4px);
+  animation: cube-shadow 6s ease-in-out infinite;
+}
+:root[data-theme="light"] .cube-wrap::after { background: radial-gradient(closest-side, rgba(20, 20, 40, 0.28), transparent); }
+
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(-24deg + var(--dx, 0deg))) rotateY(calc(var(--dy, 0deg) + 28deg));
+}
+.cube__f {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 18px;
+  background:
+    radial-gradient(120% 120% at 20% 10%, rgba(255, 255, 255, 0.28), transparent 55%),
+    linear-gradient(145deg, var(--c1), var(--c2));
+  color: rgba(255, 255, 255, 0.92);
+  font: 800 1.05rem/1 "Inter", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.12);
+  backface-visibility: hidden;
+  opacity: 0.94;
+}
+.cube__f:nth-child(1) { --c1: #ff375f; --c2: #ff9f0a; transform: translateZ(calc(var(--s) / 2)); }
+.cube__f:nth-child(2) { --c1: #0a84ff; --c2: #5e5ce6; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+.cube__f:nth-child(3) { --c1: #30d158; --c2: #64d2ff; transform: rotateY(90deg)  translateZ(calc(var(--s) / 2)); }
+.cube__f:nth-child(4) { --c1: #bf5af2; --c2: #ff375f; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+.cube__f:nth-child(5) { --c1: #ffd60a; --c2: #ff9f0a; transform: rotateX(90deg)  translateZ(calc(var(--s) / 2)); }
+.cube__f:nth-child(6) { --c1: #64d2ff; --c2: #0a84ff; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+
+@keyframes cube-spin {
+  from { transform: rotateX(-24deg) rotateY(0deg); }
+  to   { transform: rotateX(-24deg) rotateY(360deg); }
+}
+@keyframes cube-float {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -12px; }
+}
+@keyframes cube-shadow {
+  0%, 100% { transform: translateX(-50%) scale(1);   opacity: 0.9; }
+  50%      { transform: translateX(-50%) scale(0.8); opacity: 0.5; }
+}
+
+/* placement per page */
+.contact__cta { position: relative; overflow: hidden; }
+.contact__cta .cube-wrap { top: auto; bottom: 64px; right: 84px; --s: 100px; }
+.projects__head { position: relative; }
+.projects__head .cube-wrap { top: 4px; right: 320px; --s: 72px; }
+
+@media (max-width: 900px) {
+  .projects__head .cube-wrap { display: none; }
+  .contact__cta .cube-wrap { --s: 64px; top: 28px; bottom: auto; right: 28px; }
+}
+@media (max-width: 520px) {
+  .contact__cta .cube-wrap { --s: 52px; top: 24px; bottom: auto; right: 24px; }
+  .cube__f { border-radius: 12px; font-size: 0.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cube-wrap, .cube-wrap::after { animation: none; }
+}
+
+/* ==========================================================
+   3D candlestick scene (Trading page)
+   ========================================================== */
+.desk-head { position: relative; }
+.cs {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 520px;
+  height: 350px;
+  perspective: 1100px;
+  perspective-origin: 50% 30%;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(closest-side at 50% 52%, #000 70%, transparent 100%);
+          mask-image: radial-gradient(closest-side at 50% 52%, #000 70%, transparent 100%);
+}
+.cs__scene {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(-16deg + var(--cx, 0deg) + var(--dx, 0deg))) rotateY(calc(-28deg + var(--cy, 0deg) + var(--dy, 0deg)));
+  transition: transform 0.15s linear;
+  animation: cs-sway 14s ease-in-out infinite alternate;
+}
+@keyframes cs-sway {
+  from { rotate: y -9deg; }
+  to   { rotate: y 11deg; }
+}
+.cs__floor {
+  position: absolute;
+  left: 50%; top: 70%;
+  width: 560px; height: 360px;
+  margin: -180px 0 0 -280px;
+  transform: rotateX(90deg) translateZ(0);
+  background:
+    linear-gradient(var(--line-strong, rgba(255,255,255,.14)) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, var(--line-strong, rgba(255,255,255,.14)) 1px, transparent 1px) 0 0 / 40px 40px;
+  border: 1px solid var(--line-strong, rgba(255,255,255,.14));
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(255, 159, 10, 0.12) inset;
+}
+.cs__row {
+  position: absolute;
+  left: 50%; top: 70%;
+  width: 0; height: 0;
+  transform-style: preserve-3d;
+}
+.cs__c {                       /* one candle; origin = baseline, bottom-left */
+  position: absolute;
+  bottom: 0;
+  width: 0; height: 0;
+  transform-style: preserve-3d;
+  --col: #30d158;
+}
+.cs__c.is-dn { --col: #ff453a; }
+.cs__b {                       /* a 3D box: wick or body */
+  position: absolute;
+  left: calc(var(--w) / -2);
+  bottom: var(--y);
+  width: var(--w);
+  height: var(--h);
+  transform-style: preserve-3d;
+  transition: height 0.9s var(--ease, ease), bottom 0.9s var(--ease, ease);
+}
+.cs__b i {
+  position: absolute;
+  display: block;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--col) 100%, #fff 18%), var(--col));
+  transition: background 0.5s;
+}
+.cs__b .f, .cs__b .k { inset: 0; }
+.cs__b .f { transform: translateZ(calc(var(--d) / 2)); }
+.cs__b .k { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); filter: brightness(0.7); }
+.cs__b .l, .cs__b .r {
+  top: 0; bottom: 0;
+  left: calc((var(--w) - var(--d)) / 2);
+  width: var(--d);
+  filter: brightness(0.82);
+}
+.cs__b .l { transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
+.cs__b .r { transform: rotateY(90deg)  translateZ(calc(var(--w) / 2)); filter: brightness(0.62); }
+.cs__b .t {
+  left: 0; right: 0;
+  top: calc(var(--d) / -2);
+  height: var(--d);
+  transform: rotateX(90deg);
+  filter: brightness(1.25);
+}
+.cs__c.is-dn .cs__b i { background: linear-gradient(180deg, color-mix(in srgb, var(--col) 100%, #fff 18%), var(--col)); }
+.cs__b--body { --w: 22px; --d: 22px; border-radius: 2px; }
+.cs__b--body .f { box-shadow: 0 0 22px -4px var(--col); }
+.cs__b--wick { --w: 4px; --d: 4px; }
+
+@media (max-width: 1000px) {
+  .cs { position: relative; top: auto; right: auto; width: 100%; max-width: 460px; height: 270px; margin: 18px auto -6px; }
+  .cs__row, .cs__floor { top: 72%; }
+  .cs__b--body { --w: 18px; --d: 18px; }
+}
+@media (max-width: 520px) {
+  .cs { height: 250px; transform: scale(0.85); transform-origin: 50% 0; margin-bottom: -30px; }
+}
+@media (prefers-reduced-motion: reduce) { .cs__scene { animation: none; } .cs__b { transition: none; } }
+
+/* ==========================================================
+   3D shapes: Design + Developer pages
+   ========================================================== */
+.sc { position: absolute; pointer-events: none; perspective: 1000px; z-index: 0; }
+.sc__scene { position: absolute; inset: 0; transform-style: preserve-3d; }
+
+/* ---------- Design ---------- */
+.gallery__head { position: relative; }
+.sc--design { top: -34px; right: 170px; width: 340px; height: 250px; }
+.sc--design .sc__scene { animation: sc-sway 12s ease-in-out infinite alternate; transform: rotateX(calc(-12deg + var(--dx, 0deg))) rotateY(calc(-18deg + var(--dy, 0deg))); }
+@keyframes sc-sway { from { rotate: y -10deg; } to { rotate: y 12deg; } }
+.sc__item { position: absolute; transform-style: preserve-3d; }
+
+.sc__stack { left: 124px; top: 78px; width: 96px; height: 120px; transform: rotateX(62deg) rotateZ(-38deg); }
+.art {
+  position: absolute; inset: 0; border-radius: 14px;
+  translate: 0 0 var(--z);
+  background: linear-gradient(135deg, var(--a), var(--b));
+  border: 1px solid rgba(255,255,255,.35);
+  opacity: .88;
+  box-shadow: 0 0 24px -6px var(--a);
+  animation: art-lift 5s ease-in-out infinite alternate;
+  animation-delay: calc(var(--z) / 60px * -1s);
+}
+@keyframes art-lift { to { translate: 0 0 calc(var(--z) + 12px); } }
+.art b { position: absolute; left: 12px; top: 10px; font: 800 1.1rem/1 "Inter", sans-serif; color: rgba(255,255,255,.95); }
+
+.sc__sphere {
+  left: 18px; top: 36px; width: 74px; height: 74px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #fff 0 6%, #ffb36b 14%, #ff375f 52%, #7a0c2e 100%);
+  box-shadow: 0 18px 30px -12px rgba(255, 55, 95, .55), inset -8px -10px 18px rgba(0,0,0,.35);
+  translate: 0 0 40px;
+  animation: sc-bob 6s ease-in-out infinite alternate;
+}
+@keyframes sc-bob { to { translate: 0 -14px 40px; } }
+
+.sc__torus { left: 238px; top: 14px; width: 0; height: 0; animation: sc-spin 14s linear infinite; transform: rotateX(68deg); }
+@keyframes sc-spin { to { transform: rotateX(68deg) rotateZ(360deg); } }
+.ring {
+  position: absolute; left: -15px; top: -15px; width: 30px; height: 30px; border-radius: 50%;
+  border: 2px solid hsl(calc(var(--k) * 26 + 190) 90% 62%);
+  transform: rotateZ(calc(var(--k) * 25.7deg)) translateX(42px) rotateY(90deg);
+  box-shadow: 0 0 10px hsl(calc(var(--k) * 26 + 190) 90% 62% / .5);
+}
+
+.sc__pyr { left: 276px; top: 170px; width: 0; height: 0; animation: pyr-spin 16s linear infinite reverse; transform: rotateX(-14deg); --s: 62px; }
+@keyframes pyr-spin { to { transform: rotateX(-14deg) rotateY(360deg); } }
+.pf {
+  position: absolute; left: calc(var(--s) / -2); top: calc(var(--s) * -1); width: var(--s); height: calc(var(--s) * 1.118);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  transform-origin: 50% 100%;
+  transform: translateY(0) rotateY(calc(var(--k) * 90deg)) translateZ(calc(var(--s) / 2)) rotateX(26.57deg);
+  background: linear-gradient(160deg, #ffd60a, #ff9f0a);
+  filter: brightness(calc(1.1 - var(--k) * .16));
+}
+.pb { position: absolute; left: calc(var(--s) / -2); top: calc(var(--s) / -2); width: var(--s); height: var(--s); background: #7a4a00; transform: rotateX(90deg) translateZ(calc(var(--s) * -.5 + 0px)); }
+
+.sc__dot { left: 74px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: #64d2ff; box-shadow: 0 0 16px #64d2ff; translate: 0 0 90px; animation: sc-bob 4s ease-in-out infinite alternate; }
+
+/* ---------- Developer ---------- */
+.projects__head { position: relative; }
+.sc--dev { top: 8px; right: 352px; width: 340px; height: 250px; transform: scale(0.7); transform-origin: 50% 0; }
+.sc--dev .sc__scene { display: grid; place-items: center; transform: rotateX(var(--dx, 0deg)) rotateY(var(--dy, 0deg)); }
+.iso {
+  position: relative; width: 150px; height: 150px; margin-top: 40px;
+  transform-style: preserve-3d;
+  transform: rotateX(60deg) rotateZ(-38deg);
+}
+.slab { position: absolute; inset: 0; transform-style: preserve-3d; translate: 0 0 var(--z); animation: slab-float 5s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -1.2s); --t: 16px; }
+@keyframes slab-float { to { translate: 0 0 calc(var(--z) + 14px); } }
+.slab i { position: absolute; display: block; }
+.s-top {
+  inset: 0; border-radius: 8px; transform: translateZ(var(--t));
+  background: linear-gradient(135deg, var(--a), var(--b));
+  border: 1px solid rgba(255,255,255,.4);
+  box-shadow: 0 0 26px -8px var(--a);
+}
+.s-top b { position: absolute; left: 12px; bottom: 10px; font: 800 .95rem/1 "Inter", sans-serif; color: rgba(255,255,255,.95); letter-spacing: -.01em; }
+.s-f, .s-k { left: 0; right: 0; bottom: 0; height: var(--t); background: color-mix(in srgb, var(--a) 70%, #000); transform-origin: bottom; }
+.s-f { transform: rotateX(-90deg) translateZ(0); transform-origin: 50% 100%; }
+.s-k { transform: translateY(0) rotateX(-90deg) translateZ(-150px); filter: brightness(.7); }
+.s-r, .s-l { top: 0; bottom: 0; width: var(--t); background: color-mix(in srgb, var(--b) 60%, #000); }
+.s-r { right: 0; transform: rotateY(90deg); transform-origin: 100% 50%; }
+.s-l { left: 0; transform: rotateY(-90deg); transform-origin: 0 50%; }
+.glyph {
+  position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px;
+  translate: 0 0 var(--z);
+  display: grid; place-items: center; border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.4);
+  backdrop-filter: blur(6px);
+  color: #fff; font: 800 1.1rem/1 ui-monospace, "SF Mono", Menlo, monospace;
+  box-shadow: 0 0 30px -4px #0a84ff;
+  transform: rotateZ(38deg) rotateX(-60deg);
+  animation: glyph-bob 4s ease-in-out infinite alternate;
+}
+@keyframes glyph-bob { to { translate: 0 0 calc(var(--z) + 16px); } }
+.pin { position: absolute; left: 50%; top: 50%; width: 2px; height: 2px; }
+
+@media (max-width: 1100px) {
+  .sc--design, .sc--dev { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sc__scene, .art, .slab, .glyph, .sc__sphere, .sc__torus, .sc__pyr, .sc__dot { animation: none; }
+}
+
+/* interaction */
+.is-drag .cs__scene, .is-drag .sc__scene, .is-drag .cube-wrap { animation-play-state: paused; }
+.cube-wrap, .cs, .sc { user-select: none; -webkit-user-select: none; }
+.cube-wrap:hover .cube__f { opacity: 1; box-shadow: inset 0 0 22px rgba(255,255,255,.2), 0 0 26px -6px var(--c1); }
+.sc__item, .cs__c { transition: filter .3s; }
+.sc:hover .sc__item { filter: brightness(1.12) saturate(1.15); }
+.cs:hover .cs__b--body .f { box-shadow: 0 0 30px -2px var(--col); }
+
+/* ---------- Performance ---------- */
+.is-off, .is-off *, .is-off::after, .is-off::before { animation-play-state: paused !important; }
+.lite .cube-wrap, .lite .cube-wrap::after, .lite .cs__scene, .lite .sc__scene, .lite .sc__item, .lite .art, .lite .slab, .lite .glyph { animation: none !important; }
+.lite .tilt-glare { display: none; }
+.lite .hero__mesh i, .lite .hero__glow { animation: none !important; }
+.lite .marquee__track { animation-duration: 60s; }
+/* skip rendering work for sections far below the fold */
+.sec, .stack-section, .contact, .footer { content-visibility: auto; contain-intrinsic-size: auto 700px; }
+
+/* ---------- Case studies ---------- */
+.cases { width: min(1120px, calc(100% - 32px)); margin: 80px auto 0; }
+.cases__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap, 16px); }
+.case { display: flex; flex-direction: column; gap: 14px; padding: 26px; position: relative; overflow: hidden; }
+.case::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--c), transparent); }
+.case .eyebrow { color: var(--c); }
+.case dl { display: flex; flex-direction: column; gap: 14px; margin: 0; flex: 1; }
+.case dt { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.case dd { margin: 0; font-size: .92rem; line-height: 1.55; color: var(--text); }
+.case__link { align-self: flex-start; font-size: .88rem; font-weight: 600; color: var(--text); padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 999px; transition: background .25s, transform .25s; }
+.case__link:hover { background: color-mix(in srgb, var(--c) 18%, transparent); transform: translateY(-2px); }
+@media (max-width: 960px) { .cases__grid { grid-template-columns: 1fr; } }
