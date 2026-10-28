@@ -48,16 +48,16 @@
   </div>
 
   <header class="nav" id="nav">
-    <a href="index.html" class="nav__logo" aria-label="Home">TU</a>
+    <a href="index.html" class="nav__logo" aria-label="Thejas U, home"><span class="nav__mark">TU</span><span class="nav__name">Thejas U</span></a>
 
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <span class="nav__ind" aria-hidden="true"></span>
       <a href="index.html">Home</a>
-      <a href="about.html" class="is-active">About</a>
       <a href="trading.html">Trading</a>
       <a href="design.html">Design</a>
       <a href="developer.html">Developer</a>
+      <a href="about.html" class="is-active" aria-current="page">About</a>
       <a href="blog.html">Blog</a>
-      <a href="index.html#contact">Contact</a>
     </nav>
 
     <div class="nav__actions">
@@ -72,7 +72,8 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </button>
-      <a href="index.html#contact" class="btn">Let's talk</a>
+      <a href="index.html#contact" class="btn nav__cta">Let's talk</a>
+      <button class="nav__burger" id="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><i></i><i></i></button>
     </div>
   </header>
 
@@ -93,7 +94,7 @@
 
     <section class="about" aria-labelledby="about-title">
       <div class="projects__head reveal">
-        <div class="cube-wrap" aria-hidden="true"><div class="cube"><span class="cube__f">TU</span><span class="cube__f">Aa</span><span class="cube__f">&lt;/&gt;</span><span class="cube__f">XAU</span><span class="cube__f">Ps</span><span class="cube__f">{ }</span></div></div>
+        <div class="cs cs--about" aria-hidden="true"><div class="cs__scene"><div class="cs__floor"></div><div class="cs__row"></div></div></div>
         <div>
           <p class="eyebrow">About me</p>
           <h1 id="about-title">Hi, I'm <span class="grad">Thejas.</span></h1>
@@ -225,5 +226,6 @@
   <script src="script.js"></script>
   <script src="depth.js"></script>
   <script src="interact3d.js"></script>
+  <script src="about3d.js"></script>
 </body>
 </html>

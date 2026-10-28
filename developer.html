@@ -35,6 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="page.css">
   <link rel="stylesheet" href="depth.css">
 </head>
 <body>
@@ -46,16 +47,16 @@
   </div>
 
   <header class="nav" id="nav">
-    <a href="index.html" class="nav__logo" aria-label="Home">TU</a>
+    <a href="index.html" class="nav__logo" aria-label="Thejas U, home"><span class="nav__mark">TU</span><span class="nav__name">Thejas U</span></a>
 
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <span class="nav__ind" aria-hidden="true"></span>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="trading.html">Trading</a>
       <a href="design.html">Design</a>
-      <a href="developer.html" class="is-active">Developer</a>
+      <a href="developer.html" class="is-active" aria-current="page">Developer</a>
+      <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
-      <a href="index.html#contact">Contact</a>
     </nav>
 
     <div class="nav__actions">
@@ -70,7 +71,8 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </button>
-      <a href="index.html#contact" class="btn">Let's talk</a>
+      <a href="index.html#contact" class="btn nav__cta">Let's talk</a>
+      <button class="nav__burger" id="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><i></i><i></i></button>
     </div>
   </header>
 
@@ -82,23 +84,33 @@
              stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
         What I do
       </a>
-      <a class="btn resume-btn" href="resume/Thejas_U_Resume.pdf" target="_blank" rel="noopener noreferrer">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
-        Resume
-      </a>
     </div>
 
-    <!-- PROJECTS -->
-    <section class="projects" id="projects" aria-labelledby="projects-title">
+    <!-- HEADER -->
+    <header class="desk-head wrap">
+      <div class="cs cs--dev" aria-hidden="true"><div class="cs__scene"><div class="cs__floor"></div><div class="cs__row"></div></div></div>
+      <p class="eyebrow">Software developer</p>
+      <h1 id="dev-title">Things I've <span class="grad">built.</span></h1>
+      <p class="lead">Software I am building and shipping. Each one started as a problem worth solving properly.</p>
+      <div class="chips">
+        <span>React</span>
+        <span>Spring Boot</span>
+        <span>Node.js</span>
+        <span>3 projects</span>
+        <a href="https://github.com/ByThejas" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="resume/Thejas_U_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+      </div>
+    </header>
 
-      <div class="projects__head reveal">
-        <div class="sc sc--dev" aria-hidden="true"><div class="sc__scene"></div></div>
+    <!-- PROJECTS -->
+    <section class="wrap sec projects" id="projects" aria-labelledby="projects-title">
+
+      <div class="sec__head reveal">
         <div>
-          <p class="eyebrow">Software developer</p>
-          <h1 id="projects-title">Things I've built.</h1>
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-title">Built and shipped.</h2>
         </div>
-        <p class="lead">Software I am building and shipping. Each one started as a problem worth solving properly.</p>
+        <p class="lead">Live products, and what is coming next.</p>
       </div>
 
       <div class="project-grid">
@@ -180,8 +192,8 @@
 
 
     <!-- CASE STUDIES -->
-    <section class="cases" id="cases" aria-labelledby="cases-title">
-      <div class="projects__head reveal">
+    <section class="wrap sec cases" id="cases" aria-labelledby="cases-title">
+      <div class="sec__head reveal">
         <div>
           <p class="eyebrow">Case studies</p>
           <h2 id="cases-title">How they came together.</h2>
@@ -223,9 +235,9 @@
     </section>
 
     <!-- TECH STACK -->
-    <section class="stack-section" id="stack" aria-labelledby="stack-title">
+    <section class="wrap sec stack-section" id="stack" aria-labelledby="stack-title">
 
-      <div class="projects__head reveal">
+      <div class="sec__head reveal">
         <div>
           <p class="eyebrow">Tech stack</p>
           <h2 class="gh-h2" id="stack-title">What I build with.</h2>
@@ -364,9 +376,9 @@
     </section>
 
     <!-- GITHUB ACTIVITY -->
-    <section class="gh-section" id="github" aria-labelledby="gh-title">
+    <section class="wrap sec gh-section" id="github" aria-labelledby="gh-title">
 
-      <div class="projects__head reveal">
+      <div class="sec__head reveal">
         <div>
           <p class="eyebrow">GitHub</p>
           <h2 class="gh-h2" id="gh-title">Contribution calendar.</h2>

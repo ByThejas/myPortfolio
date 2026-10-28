@@ -35,6 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="page.css">
   <link rel="stylesheet" href="depth.css">
   <link rel="stylesheet" href="trading.css">
 </head>
@@ -47,16 +48,16 @@
   </div>
 
   <header class="nav" id="nav">
-    <a href="index.html" class="nav__logo" aria-label="Home">TU</a>
+    <a href="index.html" class="nav__logo" aria-label="Thejas U, home"><span class="nav__mark">TU</span><span class="nav__name">Thejas U</span></a>
 
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <span class="nav__ind" aria-hidden="true"></span>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="trading.html" class="is-active">Trading</a>
+      <a href="trading.html" class="is-active" aria-current="page">Trading</a>
       <a href="design.html">Design</a>
       <a href="developer.html">Developer</a>
+      <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
-      <a href="index.html#contact">Contact</a>
     </nav>
 
     <div class="nav__actions">
@@ -71,7 +72,8 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </button>
-      <a href="index.html#contact" class="btn">Let's talk</a>
+      <a href="index.html#contact" class="btn nav__cta">Let's talk</a>
+      <button class="nav__burger" id="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><i></i><i></i></button>
     </div>
   </header>
 

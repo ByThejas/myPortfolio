@@ -1,0 +1,46 @@
+/* =========================================================
+   Shared sub-page layout (Trading, Design, Developer)
+   One header pattern + one section pattern so every page reads the same.
+   ========================================================= */
+.wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+
+/* ---------- Page header ---------- */
+.desk-head { position: relative; margin-top: 28px; margin-bottom: 32px; }
+.desk-head h1 {
+  margin: 10px 0 14px;
+  font-size: clamp(3.4rem, 10vw, 7rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+.desk-head .lead { max-width: 56ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chips span {
+  padding: 6px 12px; border-radius: 999px;
+  background: var(--chip); border: 1px solid var(--line);
+  font-size: 0.8rem; font-weight: 500; color: var(--soft);
+}
+.chips a {
+  padding: 6px 12px; border-radius: 999px;
+  background: var(--text); color: var(--bg);
+  font-size: 0.8rem; font-weight: 600;
+  transition: transform 0.3s var(--ease);
+}
+.chips a:hover { transform: scale(1.05); }
+
+/* ---------- Sections ---------- */
+.subpage .sec { margin-top: 80px; }
+.sec__head {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: 16px 40px; margin-bottom: 28px;
+}
+.sec__head h2, .sec__head .gh-h2 {
+  margin-top: 10px;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700; line-height: 1.04; letter-spacing: -0.035em;
+}
+.sec__head .lead { max-width: 44ch; }
+
+/* retire old per-page head wrappers inside the new layout */
+.sec.projects, .sec.dz-section, .sec.stack-section, .sec.gh-section, .sec.cases, .sec.collections { width: min(1120px, calc(100% - 32px)); }
+.folders { margin-top: 0; }

@@ -80,6 +80,42 @@
     }
   }
 
+
+  /* ---------- Nav v2: sliding indicator + mobile menu ---------- */
+  (function () {
+    const nv = document.getElementById("nav");
+    const lk = document.getElementById("nav-links");
+    const ind = lk && lk.querySelector(".nav__ind");
+    const burger = document.getElementById("nav-burger");
+    if (!nv || !lk || !ind) return;
+    const place = (a) => {
+      if (!a || getComputedStyle(ind).display === "none") { if (ind.classList.contains("is-on")) ind.classList.remove("is-on"); return; }
+      ind.style.width = a.offsetWidth + "px";
+      ind.style.transform = "translateX(" + a.offsetLeft + "px)";
+      if (!ind.classList.contains("is-on")) ind.classList.add("is-on");
+    };
+    const current = () => lk.querySelector("a.is-active");
+    const reset = () => place(current());
+    lk.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("mouseenter", () => place(a));
+      a.addEventListener("focus", () => place(a));
+    });
+    lk.addEventListener("mouseleave", reset);
+    lk.addEventListener("focusout", reset);
+    new MutationObserver((m) => { if (m.some((r) => r.target !== ind)) reset(); }).observe(lk, { subtree: true, attributes: true, attributeFilter: ["class"] });
+    window.addEventListener("resize", reset);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(reset);
+    window.addEventListener("load", reset);
+    reset();
+    if (burger) {
+      const set = (o) => { nv.classList.toggle("is-open", o); burger.setAttribute("aria-expanded", o); burger.setAttribute("aria-label", o ? "Close menu" : "Open menu"); };
+      burger.addEventListener("click", () => set(!nv.classList.contains("is-open")));
+      lk.addEventListener("click", (e) => { if (e.target.closest("a")) set(false); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") set(false); });
+      document.addEventListener("click", (e) => { if (!nv.contains(e.target)) set(false); });
+    }
+  })();
+
   /* ---------- Ambient background: tiny scroll parallax ---------- */
   if (!reduceMotion) {
     let ticking = false;
